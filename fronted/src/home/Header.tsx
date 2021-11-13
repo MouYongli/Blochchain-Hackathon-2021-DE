@@ -22,9 +22,6 @@ const HomeHeader = () => {
             },
           ]}
         >
-          <Box fontWeight="light" padding={{ top: "xs" }}>
-            <span className={style["custom-home__category"]}>Hello World</span>
-          </Box>
           <div className={style["custom-home__header-title"]}>
             <Box
               variant="h1"
@@ -35,14 +32,14 @@ const HomeHeader = () => {
             >
               AI MarketPlace
             </Box>
-            <Box
+            {/* <Box
               fontWeight="light"
               padding={{ bottom: "s" }}
               fontSize="body-m"
               color="inherit"
             >
               This is a discentralized
-            </Box>
+            </Box> */}
             <Box variant="p" fontWeight="light">
               <span className={style["custom-home__header-sub-title"]}>
                 hhhhhhhhhhh
