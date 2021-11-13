@@ -1,0 +1,22 @@
+@import "@awsui/design-tokens/index.scss";
+
+.custom-home__header {
+  background-image: url(../images/header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-color: aqua;
+}
+
+.custom-home__header-title {
+  color: black;
+}
+
+.custom-home__category,
+.custom-home__header-sub-title {
+  color: $color-text-home-header-default;
+}
+
+.custom-home__header-title > * {
+  max-width: 700px;
+}
