@@ -25,31 +25,28 @@
       </v-card>
     </div>
 
-    <div id="use-model" class="model-info-cont inter" v-if="purchased">
+    <div id="dl-data" class="model-info-cont inter" v-if="purchased">
       <v-card v-if="model.addr">
-        <v-card-title style="padding-top: 5px; padding-bottom: 5px">How to use this model</v-card-title>
+        <v-card-title style="padding-top: 5px; padding-bottom: 5px">How to use this dataset</v-card-title>
         <v-divider/>
-        <v-card-subtitle class="model-info-desc">This is your API-Token:</v-card-subtitle>
+        <v-card-subtitle class="model-info-desc">Download this dataset:</v-card-subtitle>
         <v-col class="token-cont">
-          <v-text-field label="Token" outlined v-bind:value="token" disabled></v-text-field>
-          <v-btn class="model-btn" align="center" color="#1455D9" v-on:click="copyTokenCliboard(token)">
-            Copy
+          <v-btn class="model-btn" align="center" color="#1455D9">
+            Download
           </v-btn>
         </v-col>
 
         <div class="test-model-cont">
           <v-card class="model-btn-cont" outlined>
-            <v-card-title class="text-subtitle-1">Test model</v-card-title>
+            <v-card-title class="text-subtitle-1">View Dataset</v-card-title>
             <v-divider></v-divider>
             <div class="file-upload">
-              <v-card-text>Please upload you dataset as a .jpg/.png file</v-card-text>
-              <v-file-input outlined label="Dataset" v-model="fileData" />
               <div class="send-loader">
                 <v-progress-circular class="ma-auto" v-if="sendLoading" color="#0439D9" size="100" indeterminate/>
               </div>
             </div>
             <v-card-actions class="send-cont">
-              <v-btn class="send-btn" color="#1455D9" v-on:click="sendDataset(1)">Send</v-btn>
+              <v-btn class="send-btn" color="#1455D9" v-on:click="sendDataset(1)">View</v-btn>
             </v-card-actions>
 
           </v-card>
@@ -59,19 +56,19 @@
     </div>
 
     <v-card class="model-btn-cont col-auto col-sm-4" outlined v-if="purchased">
-      <p class="model-btn-text">Thank you for purchasing this model!</p>
-      <v-btn class="model-btn" align="center" color="#1455D9" href="#use-model">
-        Use Model
+      <p class="model-btn-text">Thank you for purchasing this dataset!</p>
+      <v-btn class="model-btn" align="center" color="#1455D9" href="#dl-data">
+        Download
       </v-btn>
     </v-card>
 
     <!-- Image dialog -->
     <v-dialog v-model="imageDialog">
       <v-card>
-        <v-card-title>View Result</v-card-title>
+        <v-card-title>Dataset</v-card-title>
         <v-divider/>
         <div class="file-upload">
-          <v-card-text>This is the result: </v-card-text>
+          <v-card-text>This is the dataset information: </v-card-text>
           <v-img max-width="100%" v-bind:src="image"/>
         </div>
         <v-col class="token-cont">
@@ -116,8 +113,6 @@ export default {
       model:{},
       loaded: false,
 
-      fileData:undefined,
-
       sendLoading:false,
 
       token: "de123a416b6889319a05758a3013e072b6883027042489ae5729fcfcd3c8ffbc",
@@ -137,7 +132,7 @@ export default {
   methods:{
     async getModel(addr){
       try {
-        let res = await axios.get("http://3.69.255.140:8090/ai-marketplace/model");
+        let res = await axios.get("http://3.69.255.140:8090/ai-marketplace/data");
         if (res.data !== undefined) {
           let modelList = res.data;
           for(let model of modelList){
@@ -174,10 +169,9 @@ export default {
       await this.sleep(2000);
 
       //TODO: send dataset and display image
-
       let res=await axios.get("http://3.69.255.140:8090/ai-marketplace/contract/"+this.model.addr);
       if(res.data!==undefined){
-        this.image=res.data.url;
+        this.image=res.data;
       }
       this.sendLoading=false;
       await this.sleep(1000);

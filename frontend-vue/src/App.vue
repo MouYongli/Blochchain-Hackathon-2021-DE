@@ -8,7 +8,7 @@
       <div className="d-flex align-center">
 
         <div class="logo-title">
-          AISpeace
+          AISpace
         </div>
 
       </div>

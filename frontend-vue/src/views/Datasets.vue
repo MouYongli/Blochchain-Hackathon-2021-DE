@@ -1,10 +1,10 @@
 <template>
   <v-container class="category-cont" id="models">
     <div class="category-title">
-      Available models
+      Available Datasets
     </div>
     <v-row v-if="loaded">
-      <CardElement v-for="model in modelList" :key="model.addr" v-bind:title="model.name" v-bind:desc="model.info" v-bind:url="'/models/'+model.addr" v-bind:image="getImageFromAddr(model.addr)"/>
+      <CardElement v-for="model in modelList" :key="model.addr" v-bind:title="model.name" v-bind:desc="model.info" v-bind:url="'/datasets/'+model.addr" v-bind:image="getImageFromAddr(model.addr)"/>
       <!--<CardElement title="Automatic Speech Recognition Model" desc="This model is an automatic speech recognition system implemented in PyTorch, supporting both English and German languages." image="asr.png" url="/models/language"/>
       <CardElement title="Machine Translation Model" desc="TThis model is a Transformer-based machine translation model implemented in TensorFlow." image="machine_translation.png" url="/models/translation"/>
       <CardElement title="Image Classification Model" desc="This model is a neural network implemented in PyTorch for common animal recognition." image="img_classification.png" url="/models/classification"/>
@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import CardElement from "./CardElement";
 import axios from "axios";
+import CardElement from "../components/CardElement";
 export default {
-  name: "ModelList",
+  name: "Datasets",
   components: {CardElement},
   created() {
     this.getModels();
@@ -37,7 +37,7 @@ export default {
   methods:{
     async getModels(){
       try {
-        let res = await axios.get("http://3.69.255.140:8090/ai-marketplace/model");
+        let res = await axios.get("http://3.69.255.140:8090/ai-marketplace/data");
         if (res.data !== undefined) {
           this.modelList = res.data;
           this.loaded=true;
@@ -49,22 +49,7 @@ export default {
     },
     getImageFromAddr(addr){
       switch (addr){
-        case "LdeNvMxTEmYbRtWeiPB8nw4TFccdqyqsAsiAE":{
-          return "asr.png";
-        }
-        case "LdeNzbwk9Hn5aJUDVCAZew7o5Cg5Q9xzKhtE5":{
-          return "machine_translation.png";
-        }
-        case "LdeNtetGdHSyRgw4wDWX4Q8Mpe9kRZKznb65v":{
-          return "img_classification.png";
-        }
-        case "LdeNfcDNKHNHKbwBfM5h2yx9n8STcF4bHG8uB":{
-          return "time_series_prediction.png";
-        }
-        case "LdeNxK5anSpxgAfpXbDCfM6Mx1EXgPs6sfKnp":{
-          return "hypercube.jpg";
-        }
-        default:{
+        case "LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D":{
           return "header1.jpg";
         }
       }

@@ -27,12 +27,20 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Modelview.vue')
   },
   {
-    path: '/resources',
-    name: 'Resources',
+    path: '/datasets/:id',
+    name: 'Datasetview',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Resources.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/DatasetView.vue')
+  },
+  {
+    path: '/datasets',
+    name: 'Datasets',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Datasets.vue')
   },
 
 
