@@ -19,12 +19,12 @@ public class ModelContractImp implements EventProcessingAware, ModelContract {
 
     @Override
     public String getModelName() {
-        return "model name";
+        return "A cost-effective way to convert and use hyperspectral images";
     }
 
     @Override
     public String getModelInfo() {
-        return "model info";
+        return "Hyperspectral imaging is a method of capturing various wavelengths of electromagnetic rays. The goal of hyperspectral imaging is to obtain the spectrum for each pixel in the image of a scene. Different forms of matter have different spectral properties and capturing these variations gives more information about the nature and qualities of the objects in the image.";
     }
 
     @Override

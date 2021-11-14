@@ -23,7 +23,7 @@ func (controllers *Controllers) GetModel(ctx iris.Context) {
 	model := make(map[string]string)
 	modelName := bs.NewTransaction(ledgers[0])
 	nameSender := modelName.ContractEvents()
-	err = nameSender.Send(base58.MustDecode("LdeNyV1dRhp8UMgCDYxMdmWM8rXddsyRiHfsf"), 1, "getModelName")
+	err = nameSender.Send(base58.MustDecode("LdeNxheL7XLV1xjKJLqAXQgWsSPKhvjyWCk4m"), 1, "getModelName")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -42,7 +42,7 @@ func (controllers *Controllers) GetModel(ctx iris.Context) {
 
 	modelInfo := bs.NewTransaction(ledgers[0])
 	infoSender := modelInfo.ContractEvents()
-	err = infoSender.Send(base58.MustDecode("LdeNyV1dRhp8UMgCDYxMdmWM8rXddsyRiHfsf"), 1, "getModelInfo")
+	err = infoSender.Send(base58.MustDecode("LdeNxheL7XLV1xjKJLqAXQgWsSPKhvjyWCk4m"), 1, "getModelInfo")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -58,7 +58,7 @@ func (controllers *Controllers) GetModel(ctx iris.Context) {
 	}
 
 	model["info"] = string(response.OperationResults[0].Result.Bytes)
-	model["addr"] = "LdeNyV1dRhp8UMgCDYxMdmWM8rXddsyRiHfsf"
+	model["addr"] = "LdeNxheL7XLV1xjKJLqAXQgWsSPKhvjyWCk4m"
 
 	ret := make([]map[string]string, 1)
 	ret[0] = model
@@ -77,7 +77,7 @@ func (controllers *Controllers) GetData(ctx iris.Context) {
 	data := make(map[string]string)
 	modelName := bs.NewTransaction(ledgers[0])
 	nameSender := modelName.ContractEvents()
-	err = nameSender.Send(base58.MustDecode("LdeNgwNFVTNGgtKyPz6e2ZKBvGz7Kdri6RfeV"), 1, "getDataName")
+	err = nameSender.Send(base58.MustDecode("LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D"), 1, "getDataName")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -96,7 +96,7 @@ func (controllers *Controllers) GetData(ctx iris.Context) {
 
 	modelInfo := bs.NewTransaction(ledgers[0])
 	infoSender := modelInfo.ContractEvents()
-	err = infoSender.Send(base58.MustDecode("LdeNgwNFVTNGgtKyPz6e2ZKBvGz7Kdri6RfeV"), 1, "getDataInfo")
+	err = infoSender.Send(base58.MustDecode("LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D"), 1, "getDataInfo")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -112,7 +112,7 @@ func (controllers *Controllers) GetData(ctx iris.Context) {
 	}
 
 	data["info"] = string(response.OperationResults[0].Result.Bytes)
-	data["addr"] = "LdeNgwNFVTNGgtKyPz6e2ZKBvGz7Kdri6RfeV"
+	data["addr"] = "LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D"
 
 	ret := make([]map[string]string, 1)
 	ret[0] = data

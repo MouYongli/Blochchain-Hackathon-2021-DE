@@ -19,12 +19,12 @@ public class DataContractImp implements EventProcessingAware, DataContract {
 
     @Override
     public String getDataName() {
-        return "data name";
+        return "MNIST";
     }
 
     @Override
     public String getDataInfo() {
-        return "data info";
+        return "The MNIST database of handwritten digits, available from this page, has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST. The digits have been size-normalized and centered in a fixed-size image.";
     }
 
     @Override
