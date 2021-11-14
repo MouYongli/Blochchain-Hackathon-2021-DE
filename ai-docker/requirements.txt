@@ -1,0 +1,5 @@
+fbprophet
+pandas
+Flask
+logging
+uuid
