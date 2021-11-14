@@ -125,6 +125,6 @@ public class RGBModelContractImp implements EventProcessingAware, RGBModelContra
      * @result model链接
      */
     public String trade() {
-        return "http://docker.io/rgb/model/contract";
+        return "http://ec2-3-68-222-109.eu-central-1.compute.amazonaws.com:5000";
     }
 }
