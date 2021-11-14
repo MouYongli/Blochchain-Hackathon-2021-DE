@@ -6,7 +6,7 @@ const Goods = () => {
     {
       title: "AI model 1",
       body: "description",
-      url: "/path/to/the/product",
+      url: "/asset",
       Image: "../images/header.png",
     },
     {
@@ -18,7 +18,7 @@ const Goods = () => {
     {
       title: "AI model 1",
       body: "description",
-      url: "/path/to/the/product",
+      url: "/src/asset/AssetPage.tsx",
       Image: "../images/header.png",
     },
     {
@@ -46,7 +46,7 @@ const Goods = () => {
             <Box variant="h3" padding={{ top: "n" }} fontWeight="bold">
               {good.title}
             </Box>
-            <img src="../images/header.png" alt="BigCo Inc. logo" />
+            <img src={good.Image} alt="BigCo Inc. logo" />
             <Box variant="p">{good.body}</Box>
             <Button href={good.url} variant="normal">
               learn more
