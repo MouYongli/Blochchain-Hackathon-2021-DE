@@ -1,0 +1,14 @@
+{
+  "Server": {
+    "host": "0.0.0.0",
+    "port": 8090
+  },
+  "Chain": {
+    "gateway": "192.168.2.120",
+    "port": 8080,
+    "secure": false,
+    "priv": "177gjzHTznYdPgWqZrH43W3yp37onm74wYXT4v9FukpCHBrhRysBBZh7Pzdo5AMRyQGJD7x",
+    "pub": "3snPdw7i7PjVKiTH2VnXZu5H8QmNaSXpnk4ei533jFpuifyjS5zzH9",
+    "pwd": "DYu3G8aGTMBW1WrTw76zxQJQU4DHLw9MLyy7peG4LKkY"
+  }
+}

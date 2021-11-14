@@ -2,9 +2,8 @@ module app
 
 go 1.17
 
-require github.com/kataras/iris/v12 v12.1.8
-
 require (
+	github.com/blockchain-jd-com/framework-go v1.2.0
 	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/CloudyKit/fastprinter v0.0.0-20200109182630-33d98a066a53 // indirect
 	github.com/CloudyKit/jet/v3 v3.0.0 // indirect
@@ -25,6 +24,7 @@ require (
 	github.com/iris-contrib/schema v0.0.2 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
 	github.com/kataras/golog v0.0.18 // indirect
+	github.com/kataras/iris/v12 v12.1.8
 	github.com/kataras/pio v0.0.8 // indirect
 	github.com/kataras/sitemap v0.0.5 // indirect
 	github.com/klauspost/compress v1.13.4 // indirect
