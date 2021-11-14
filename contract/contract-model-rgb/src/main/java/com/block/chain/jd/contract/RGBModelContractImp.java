@@ -12,19 +12,19 @@ import com.jd.blockchain.ledger.TypedKVEntry;
 
 import utils.Bytes;
 
-public class ModelContractImp implements EventProcessingAware, ModelContract {
+public class RGBModelContractImp implements EventProcessingAware, RGBModelContract {
 
     private ContractEventContext eventContext;
 
 
     @Override
     public String getModelName() {
-        return "A cost-effective way to convert and use hyperspectral images";
+        return "Fast RGB to Hyperspectral image Conversion";
     }
 
     @Override
     public String getModelInfo() {
-        return "Hyperspectral imaging is a method of capturing various wavelengths of electromagnetic rays. The goal of hyperspectral imaging is to obtain the spectrum for each pixel in the image of a scene. Different forms of matter have different spectral properties and capturing these variations gives more information about the nature and qualities of the objects in the image.";
+        return "The goal of this work is providing a cost-efficient solution for hyperspectral imaging that can reconstruct the spectra of a natural scene from a single RGB image captured by a camera with known spectral response.";
     }
 
     @Override
@@ -125,6 +125,6 @@ public class ModelContractImp implements EventProcessingAware, ModelContract {
      * @result model链接
      */
     public String trade() {
-        return new String("http://google.com");
+        return "http://ec2-3-68-222-109.eu-central-1.compute.amazonaws.com:5000";
     }
 }

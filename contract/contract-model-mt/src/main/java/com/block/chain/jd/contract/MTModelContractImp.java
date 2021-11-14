@@ -10,21 +10,21 @@ import com.jd.blockchain.ledger.BlockchainKeypair;
 import com.jd.blockchain.ledger.Event;
 import com.jd.blockchain.ledger.TypedKVEntry;
 
-import utils.Bytes;
+        import utils.Bytes;
 
-public class ModelContractImp implements EventProcessingAware, ModelContract {
+public class MTModelContractImp implements EventProcessingAware, MTModelContract {
 
     private ContractEventContext eventContext;
 
 
     @Override
     public String getModelName() {
-        return "A cost-effective way to convert and use hyperspectral images";
+        return "Machine Translation Model";
     }
 
     @Override
     public String getModelInfo() {
-        return "Hyperspectral imaging is a method of capturing various wavelengths of electromagnetic rays. The goal of hyperspectral imaging is to obtain the spectrum for each pixel in the image of a scene. Different forms of matter have different spectral properties and capturing these variations gives more information about the nature and qualities of the objects in the image.";
+        return "This model is a Transformer-based machine translation model implemented in TensorFlow.";
     }
 
     @Override
@@ -125,6 +125,6 @@ public class ModelContractImp implements EventProcessingAware, ModelContract {
      * @result model链接
      */
     public String trade() {
-        return new String("http://google.com");
+        return "https://docker.io/mt/model/constract";
     }
 }
