@@ -14,8 +14,9 @@ func RegisterRoute(app *iris.Application) error {
 	{
 		_ctrl := controllers.Controllers{}
 		//index.Get("/", _ctrl.Index)
-		index.Get("/ai-marketplace/smartcontract/{contractId:string}", _ctrl.GetContract)
-		index.Post("/ai-marketplace/smartcontract", _ctrl.PostContract)
+		index.Get("/ai-marketplace/contract/{contractId:string}", _ctrl.Trade)
+		index.Get("/ai-marketplace/model", _ctrl.GetModel)
+		index.Get("/ai-marketplace/data", _ctrl.GetData)
 	}
 
 	app.OnErrorCode(iris.StatusNotFound, func(ctx iris.Context) {
