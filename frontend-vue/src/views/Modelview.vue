@@ -9,9 +9,9 @@
         <p class="model-subtitle inter">{{getSubtitle()}}</p>
       </v-col>
       <v-card class="model-btn-cont col-auto col-sm-4" outlined>
-        <p class="model-btn-text">Demo Text</p>
-        <v-btn class="model-btn" align="center" color="#1455D9" v-on:click="sendDialog=true; sendLoading=false">
-          DEMO
+        <p class="model-btn-text">Purchase Text</p>
+        <v-btn class="model-btn" align="center" color="#1455D9" v-on:click=" purchased=true; notifyText='You have successfully purchased the model!'; notify=true; sendLoading=false">
+          PURCHASE
         </v-btn>
       </v-card>
     </v-row>
@@ -25,23 +25,46 @@
       </v-card>
     </div>
 
-    <!-- Sending dialog-->
-    <v-dialog v-model="sendDialog">
-      <v-card>
-        <v-card-title>Upload Dataset</v-card-title>
+    <div id="use-model" class="model-info-cont inter" v-if="purchased">
+      <v-card v-if="modelInfo">
+        <v-card-title style="padding-top: 5px; padding-bottom: 5px">How to use this model</v-card-title>
         <v-divider/>
-        <div class="file-upload">
-          <v-card-text>Please upload you dataset as a .jpg/.png file</v-card-text>
-          <v-file-input outlined label="Dataset" />
-          <div class="send-loader">
-            <v-progress-circular class="ma-auto" v-if="sendLoading" color="#0439D9" size="100" indeterminate/>
-          </div>
+        <v-card-subtitle class="model-info-desc">This is your API-Token:</v-card-subtitle>
+        <v-col class="token-cont">
+          <v-text-field label="Token" outlined v-bind:value="token" disabled></v-text-field>
+          <v-btn class="model-btn" align="center" color="#1455D9" v-on:click="copyTokenCliboard(token)">
+            Copy
+          </v-btn>
+        </v-col>
+
+        <div class="test-model-cont">
+          <v-card class="model-btn-cont" outlined>
+            <v-card-title class="text-subtitle-1">Test model</v-card-title>
+            <v-divider></v-divider>
+            <div class="file-upload">
+              <v-card-text>Please upload you dataset as a .jpg/.png file</v-card-text>
+              <v-file-input outlined label="Dataset" />
+              <div class="send-loader">
+                <v-progress-circular class="ma-auto" v-if="sendLoading" color="#0439D9" size="100" indeterminate/>
+              </div>
+            </div>
+            <v-card-actions class="send-cont">
+              <v-btn class="send-btn" color="#1455D9" v-on:click="sendDataset(1)">Send</v-btn>
+            </v-card-actions>
+
+          </v-card>
         </div>
-        <v-card-actions class="send-cont">
-          <v-btn class="send-btn" color="#1455D9" v-on:click="sendDataset(1)">Send</v-btn>
-        </v-card-actions>
+
       </v-card>
-    </v-dialog>
+    </div>
+
+    <v-card class="model-btn-cont col-auto col-sm-4" outlined v-if="purchased">
+      <p class="model-btn-text">Thank you for purchasing this model!</p>
+      <v-btn class="model-btn" align="center" color="#1455D9" href="#use-model">
+        Use Model
+      </v-btn>
+    </v-card>
+
     <!-- Image dialog -->
     <v-dialog v-model="imageDialog">
       <v-card>
@@ -56,6 +79,25 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+
+    <!-- copy notifier -->
+    <v-snackbar
+        v-model="notify"
+    >
+      {{notifyText}}
+      <template v-slot:action="{ attrs }">
+        <v-btn
+            color="#1455D9"
+            text
+            v-bind="attrs"
+            @click="notify = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+
   </div>
 </template>
 
@@ -63,8 +105,13 @@
 export default {
   data() {
     return {
-      sendDialog: false,
       sendLoading:false,
+
+      token: "de123a416b6889319a05758a3013e072b6883027042489ae5729fcfcd3c8ffbc",
+      notify: false,
+      notifyText:"",
+      purchased: false,
+
 
       imageDialog: false,
       image: "",
@@ -90,12 +137,24 @@ export default {
       this.image="";
       this.sendLoading=true;
       await this.sleep(2000);
-      this.sendDialog=false;
 
       //TODO: send dataset and display image
       this.image=require("../assets/header1.jpg");
+      this.sendLoading=false;
       await this.sleep(1000);
       this.imageDialog=true;
+    },
+
+    copyTokenCliboard(token){
+      const clipboardData =
+          event.clipboardData ||
+          window.clipboardData ||
+          event.originalEvent?.clipboardData ||
+          navigator.clipboard;
+
+      clipboardData.writeText(token);
+      this.notifyText="The Token was copied to your clipboard!";
+      this.notify=true;
     },
 
 
@@ -108,6 +167,11 @@ export default {
 </script>
 
 <style scoped>
+
+  .test-model-cont{
+    padding: 30px;
+  }
+
   .send-loader{
     width: 100%;
     justify-content: center;
