@@ -4,7 +4,7 @@
     "port": 8090
   },
   "Chain": {
-    "gateway": "192.168.2.120",
+    "gateway": "3.69.255.140",
     "port": 8080,
     "secure": false,
     "priv": "177gju9Ps1PFzSREozR64HvsNhSHae1fATEK8hvmrdFdeZRAxDfoqLb2rtqgAtFw3hYEPFk",
