@@ -46,7 +46,7 @@
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <router-view class="r-view"/>
     </v-main>
   </v-app>
 </template>
@@ -76,8 +76,16 @@ export default {
 body {
   font-family: 'Inter', sans-serif;
 }
+.v-application{
+  background-color: #F2F2F2 !important;
+}
 
 .vicon {
   padding-right: 10px;
 }
+.r-view{
+  background-color: #F2F2F2;
+  max-width: 100%!important;
+}
+
 </style>

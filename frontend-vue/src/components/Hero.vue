@@ -1,8 +1,11 @@
 <template>
   <v-col
   class="hero-cont">
+    <div class="logo-title">
+      AISpeace
+    </div>
     <div
-    class="title">
+    class="titlename">
       {{title}}
     </div>
     <div
@@ -31,16 +34,25 @@ export default {
   color: #fff;
   font-family: 'Inter', sans-serif;
 }
-.title{
+
+.logo-title{
+  text-align: center;
+  font-size: 3em;
+}
+
+.titlename{
   text-align: center;
   font-weight: 800;
+  font-size: 2em;
   font-family: 'Inter', sans-serif;
 }
 .description{
   font-weight: 500;
   font-family: 'Inter', sans-serif;
-  text-align: left;
+  text-align: center;
   padding: 80px;
+  max-width: 1000px;
+  margin: auto;
 }
 /*TODO: FONT and styles
 
