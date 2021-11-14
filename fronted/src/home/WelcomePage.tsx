@@ -8,10 +8,10 @@ const WelcomePage = () => {
       // navigation={}
       navigationHide={true}
       content={
-        <Box margin={{ bottom: "l" }} padding="xs">
+        <>
           <HomeHeader />
           <Homebody />
-        </Box>
+        </>
       }
       disableContentPaddings={true}
       maxContentWidth={1380}
