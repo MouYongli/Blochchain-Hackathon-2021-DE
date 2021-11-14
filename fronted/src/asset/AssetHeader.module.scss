@@ -1,0 +1,21 @@
+@import "@awsui/design-tokens/index.scss";
+
+.custom-asset__header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: midnightblue;
+}
+
+.custom-asset__header-title {
+  color: white;
+}
+
+.custom-asset__category,
+.custom-asset__header-sub-title {
+  color: $color-text-home-header-default;
+}
+
+.custom-asset__header-title > * {
+  max-width: 700px;
+}

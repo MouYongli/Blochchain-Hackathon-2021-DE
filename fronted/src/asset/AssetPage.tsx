@@ -1,16 +1,15 @@
 import { AppLayout, Box } from "@awsui/components-react";
-import HomeHeader from "./Header";
-import Homebody from "./Homebody";
+import AssetHeader from "./AssetHeader";
 
-const WelcomePage = () => {
+const AssetPage = () => {
   return (
     <AppLayout
       // navigation={}
       navigationHide={true}
       content={
         <>
-          <HomeHeader />
-          <Homebody />
+          <AssetHeader />
+          {/* <AssetBody /> */}
         </>
       }
       disableContentPaddings={true}
@@ -19,4 +18,4 @@ const WelcomePage = () => {
   );
 };
 
-export default WelcomePage;
+export default AssetPage;

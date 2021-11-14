@@ -7,15 +7,19 @@
    Use your ML expertise to predict real crypto market data
 
 2. NFL Big Data Bowl 2022
-   Help evaluate special teams performance\
+
+   Help evaluate special teams performance
 
 3. Store Sales - Time Series Forecasting
+   
    Use machine learning to predict grocery sales
 
 4. Optiver Realized Volatility Prediction
+
    Apply your data science skills to make financial markets better
 
 5. Digit Recognizer
+
    Learn computer vision fundamentals with the famous MNIST data
 
 ## Model Marketplace

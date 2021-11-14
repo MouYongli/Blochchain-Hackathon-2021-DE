@@ -2,21 +2,21 @@ import React from "react";
 import { Box, Button, Container, Grid } from "@awsui/components-react";
 import style from "./Goods.module.scss";
 import { url } from "inspector";
-import img_model_asr from '../images/asr.png';
-import img_model_mt from '../images/machine_translation.png';
-import img_model_ic from '../images/img_classification.png';
-import img_model_tsp from '../images/time_series_prediction.png';
-import img_data_imagenet from '../images/imagenet.png';
-import img_data_europarl from '../images/europarl.png';
-import img_data_celeba from '../images/celeba.png';
-import img_data_mozilla from '../images/common_voice.png';
-import img_power_gpulab from '../images/gpulab.png';
-import img_power_leadergpu from '../images/leadergpu.png';
+import img_model_asr from "../images/asr.png";
+import img_model_mt from "../images/machine_translation.png";
+import img_model_ic from "../images/img_classification.png";
+import img_model_tsp from "../images/time_series_prediction.png";
+import img_data_imagenet from "../images/imagenet.png";
+import img_data_europarl from "../images/europarl.png";
+import img_data_celeba from "../images/celeba.png";
+import img_data_mozilla from "../images/common_voice.png";
+import img_power_gpulab from "../images/gpulab.png";
+import img_power_leadergpu from "../images/leadergpu.png";
 
 const img_style = {
-	width: '200px', 
-	height: '200px',
-	}
+  width: "200px",
+  height: "200px",
+};
 const Goods = () => {
   const model_list = [
     {
@@ -45,7 +45,6 @@ const Goods = () => {
     },
   ];
 
-
   const data_list = [
     {
       title: "ImageNet Dataset",
@@ -72,7 +71,6 @@ const Goods = () => {
       Image: img_data_mozilla,
     },
   ];
-
 
   const power_list = [
     {
@@ -101,7 +99,6 @@ const Goods = () => {
     // },
   ];
 
-
   return (
     <>
       <Box variant="h1" margin={{ top: "xxl" }}>
@@ -120,7 +117,7 @@ const Goods = () => {
             <Box variant="h3" padding={{ top: "n" }} fontWeight="bold">
               {good.title}
             </Box>
-            <img src={good.Image}  alt={good.title} style = {img_style}/>
+            <img src={good.Image} alt={good.title} style={img_style} />
             <Box variant="p">{good.body}</Box>
             <Button href={good.url} variant="normal">
               learn more
@@ -145,7 +142,7 @@ const Goods = () => {
             <Box variant="h3" padding={{ top: "n" }} fontWeight="bold">
               {good.title}
             </Box>
-            <img src={good.Image} alt={good.title} style = {img_style}/>
+            <img src={good.Image} alt={good.title} style={img_style} />
             <Box variant="p">{good.body}</Box>
             <Button href={good.url} variant="normal">
               learn more
@@ -170,7 +167,7 @@ const Goods = () => {
             <Box variant="h3" padding={{ top: "n" }} fontWeight="bold">
               {good.title}
             </Box>
-            <img src={good.Image} alt={good.title} style = {img_style}/>
+            <img src={good.Image} alt={good.title} style={img_style} />
             <Box variant="p">{good.body}</Box>
             <Button href={good.url} variant="normal">
               learn more
@@ -178,9 +175,7 @@ const Goods = () => {
           </Container>
         ))}
       </Grid>
-
     </>
-    
   );
 };
 

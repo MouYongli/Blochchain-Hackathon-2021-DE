@@ -42,8 +42,8 @@ const HomeHeader = () => {
             </Box> */}
             <Box variant="p" fontWeight="light">
               <span className={style["custom-home__header-sub-title"]}>
-              Built for you, powered by open collaboration.
-              Explore the largest open AI services in the world.
+                Built for you, powered by open collaboration. Explore the
+                largest open AI services in the world.
               </span>
             </Box>
           </div>
