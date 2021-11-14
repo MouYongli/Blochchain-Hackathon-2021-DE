@@ -28,7 +28,7 @@ const HomeHeader = () => {
               fontWeight="bold"
               padding="n"
               fontSize="display-l"
-              color="inherit"
+              color="text-label"
             >
               AI MarketPlace
             </Box>
@@ -42,7 +42,8 @@ const HomeHeader = () => {
             </Box> */}
             <Box variant="p" fontWeight="light">
               <span className={style["custom-home__header-sub-title"]}>
-                hhhhhhhhhhh
+              Built for you, powered by open collaboration.
+              Explore the largest open AI services in the world.
               </span>
             </Box>
           </div>
