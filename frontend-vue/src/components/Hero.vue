@@ -28,17 +28,19 @@ export default {
   background-size: cover;
 
   padding: 100px 0px;
-  text-align: center;
   color: #fff;
   font-family: 'Inter', sans-serif;
 }
 .title{
-  font-weight: 700;
+  text-align: center;
+  font-weight: 800;
   font-family: 'Inter', sans-serif;
 }
 .description{
   font-weight: 500;
   font-family: 'Inter', sans-serif;
+  text-align: left;
+  padding: 80px;
 }
 /*TODO: FONT and styles
 
