@@ -1,59 +1,59 @@
 <template>
   <v-app>
     <v-app-bar
-      app
-      color="primary"
-      dark
+        app
+        color="#0439D9"
+        dark
     >
-      <div class="d-flex align-center">
+      <div className="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
+            alt="Vuetify Logo"
+            className="shrink mr-2"
+            contain
+            src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+            transition="scale-transition"
+            width="40"
         />
 
         <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
+            alt="Vuetify Name"
+            className="shrink mt-1 hidden-sm-and-down"
+            contain
+            min-width="100"
+            src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+            width="100"
         />
       </div>
 
       <v-spacer></v-spacer>
 
       <v-btn
-        href="/"
-        text
+          href="/"
+          text
       >
         <v-icon class="vicon">mdi-home</v-icon>
-        <span class="mr-2">Home</span>
+        <span class="mr-2 inter">Home</span>
       </v-btn>
       <v-btn
           href="/models"
           text
       >
         <v-icon class="vicon">mdi-file-document-outline</v-icon>
-        <span class="mr-2">Models</span>
+        <span class="mr-2 inter">Models</span>
       </v-btn>
       <v-btn
           href="/datasets"
           text
       >
         <v-icon class="vicon">mdi-harddisk</v-icon>
-        <span class="mr-2">Datasets</span>
+        <span class="mr-2 inter">Datasets</span>
       </v-btn>
       <v-btn
           href="/resources"
           text
       >
         <v-icon class="vicon">mdi-monitor-screenshot</v-icon>
-        <span class="mr-2">Resources</span>
+        <span class="mr-2 inter">Resources</span>
       </v-btn>
     </v-app-bar>
 
@@ -76,10 +76,16 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-body{
+
+.inter{
   font-family: 'Inter', sans-serif;
 }
-.vicon{
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.vicon {
   padding-right: 10px;
 }
 </style>
