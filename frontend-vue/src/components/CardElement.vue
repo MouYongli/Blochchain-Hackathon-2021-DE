@@ -31,6 +31,7 @@ export default {
 <style scoped>
 .card-title{
   padding-bottom: 0;
+  word-break: normal;
 }
 .card-actions{
   justify-content: end;
