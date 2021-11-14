@@ -171,7 +171,7 @@ export default {
       //TODO: send dataset and display image
       let res=await axios.get("http://3.69.255.140:8090/ai-marketplace/contract/"+this.model.addr);
       if(res.data!==undefined){
-        this.image=res.data;
+        this.image=res.data.url;
       }
       this.sendLoading=false;
       await this.sleep(1000);

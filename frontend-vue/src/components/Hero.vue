@@ -2,7 +2,7 @@
   <v-col
   class="hero-cont">
     <div class="logo-title">
-      AISpeace
+      AISpace
     </div>
     <div
     class="titlename">
