@@ -6,23 +6,11 @@
         dark
     >
       <div className="d-flex align-center">
-        <v-img
-            alt="Vuetify Logo"
-            className="shrink mr-2"
-            contain
-            src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-            transition="scale-transition"
-            width="40"
-        />
 
-        <v-img
-            alt="Vuetify Name"
-            className="shrink mt-1 hidden-sm-and-down"
-            contain
-            min-width="100"
-            src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-            width="100"
-        />
+        <div class="logo-title">
+          AISpeace
+        </div>
+
       </div>
 
       <v-spacer></v-spacer>
@@ -77,6 +65,10 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+.logo-title{
+  font-weight: 800;
+  font-size: 1.4em;
+}
 .inter{
   font-family: 'Inter', sans-serif;
 }
