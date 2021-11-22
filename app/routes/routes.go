@@ -17,6 +17,7 @@ func RegisterRoute(app *iris.Application) error {
 		index.Get("/ai-marketplace/contract/{contractId:string}", _ctrl.Trade)
 		index.Get("/ai-marketplace/model", _ctrl.GetModel)
 		index.Get("/ai-marketplace/data", _ctrl.GetData)
+		index.Post("/ai-marketplace/upload", _ctrl.UploadImg)
 	}
 
 	app.OnErrorCode(iris.StatusNotFound, func(ctx iris.Context) {

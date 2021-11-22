@@ -2,11 +2,15 @@ package controllers
 
 import (
 	"app/config"
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"github.com/blockchain-jd-com/framework-go/crypto/framework"
 	"github.com/blockchain-jd-com/framework-go/sdk"
 	"github.com/blockchain-jd-com/framework-go/utils/base58"
 	"github.com/kataras/iris/v12"
+	"io/ioutil"
+	"net/http"
 )
 
 type Controllers struct {}
@@ -162,4 +166,43 @@ func (controllers *Controllers) Trade(ctx iris.Context) {
 	ret := make(map[string]string)
 	ret["url"] = string(response.OperationResults[0].Result.Bytes)
 	ctx.JSON(ret)
+}
+
+func (controllers *Controllers) UploadImg(ctx iris.Context) {
+	file, info, err := ctx.FormFile("file")
+	if err != nil {
+		fmt.Println(err.Error())
+		ctx.StatusCode(iris.StatusInternalServerError)
+		ctx.WriteString(err.Error())
+		return
+	}
+	defer file.Close()
+	// write image file to folder
+	path := config.GetConfigInstance().Server.Uploads + info.Filename
+	data, err := ioutil.ReadAll(file)
+	if err != nil {
+		fmt.Println(err)
+		ctx.StatusCode(iris.StatusInternalServerError)
+		ctx.WriteString(err.Error())
+		return
+	}
+	err = ioutil.WriteFile(path, data, 0666)
+	if err != nil {
+		fmt.Println(err)
+		ctx.StatusCode(iris.StatusInternalServerError)
+		ctx.WriteString(err.Error())
+		return
+	}
+
+	val := make(map[string]string)
+	val["img_url"] = info.Filename
+	bytesData, _ := json.Marshal(val)
+	resp, _ := http.Post(config.GetConfigInstance().Server.Model,"application/json", bytes.NewReader(bytesData))
+	body, _ := ioutil.ReadAll(resp.Body)
+	ret := make(map[string]interface{})
+	err = json.Unmarshal(body, &ret)
+	result := make(map[string]interface{})
+	result["status"] = ret["status"]
+	result["url"] = config.GetConfigInstance().Server.Downloads + ret["url"].(string)
+	ctx.JSON(result)
 }

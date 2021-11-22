@@ -9,6 +9,8 @@ RUN cd /backend \
     && go mod tidy \
     && go build -o app main.go
 
+VOLUME [ "/backend/uploads" ]
+
 EXPOSE 8090
 
 CMD ["/backend/app"]
