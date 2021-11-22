@@ -76,8 +76,8 @@
 
                         <!-- 用户信息，必选项，任何一个合约发布都需要拥有者进行签名 -->
                         <signer>
-                            <pubKey>7VeRL83uFK2S56ie1oaRPBAyPqabPGtaDVAku7QtkuaH5y1t</pubKey>
-                            <privKey>177gjvcYRVnNpUEpNux4nRg7KcnpKrXgMaoTJMPwcGTPVRjaZM68usjY2aDQFSHgy4hkoSB</privKey>
+                            <pubKey>7VeRFH9JtEKaKLoYdik5gqvkKZyvDyCWtpNCsUQEKp9NfFjQ</pubKey>
+                            <privKey>177gk2Y4Dw2Wibs1cZgpetYMsPw6md6FuLGN1wQKy5tuBn4S9s4aogn7FBvcJZgMusM1tZ7</privKey>
                             <privKeyPwd>8EjkXVSTxMFjCvNNsTo8RBMDEVQmk7gYkW4SCDuvdsBG</privKeyPwd>
                         </signer>
                     </deployment>

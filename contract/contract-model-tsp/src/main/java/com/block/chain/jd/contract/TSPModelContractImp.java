@@ -1,7 +1,6 @@
 package com.block.chain.jd.contract;
 
 import com.jd.blockchain.contract.ContractEventContext;
-import com.jd.blockchain.contract.EventProcessingAware;
 import com.jd.blockchain.crypto.AsymmetricKeypair;
 import com.jd.blockchain.crypto.Crypto;
 import com.jd.blockchain.crypto.CryptoAlgorithm;
@@ -9,8 +8,9 @@ import com.jd.blockchain.crypto.SignatureFunction;
 import com.jd.blockchain.ledger.BlockchainKeypair;
 import com.jd.blockchain.ledger.Event;
 import com.jd.blockchain.ledger.TypedKVEntry;
-
+import java.util.UUID;
 import utils.Bytes;
+
 
 public class TSPModelContractImp implements EventProcessingAware, TSPModelContract {
 
@@ -124,8 +124,9 @@ public class TSPModelContractImp implements EventProcessingAware, TSPModelContra
      *
      * @result model链接
      */
+    @Override
     public String trade() {
-        return "https://docker.io/tsp/model/contract";
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }
 

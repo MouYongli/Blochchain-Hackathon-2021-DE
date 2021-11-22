@@ -12,6 +12,8 @@ import com.jd.blockchain.ledger.TypedKVEntry;
 
 import utils.Bytes;
 
+import java.util.UUID;
+
 public class DataContractImp implements EventProcessingAware, DataContract {
 
     private ContractEventContext eventContext;
@@ -125,6 +127,6 @@ public class DataContractImp implements EventProcessingAware, DataContract {
      * @result model链接
      */
     public String trade() {
-        return new String("http://google.com");
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

@@ -12,6 +12,8 @@ import com.jd.blockchain.ledger.TypedKVEntry;
 
 import utils.Bytes;
 
+import java.util.UUID;
+
 public class RGBModelContractImp implements EventProcessingAware, RGBModelContract {
 
     private ContractEventContext eventContext;
@@ -125,6 +127,6 @@ public class RGBModelContractImp implements EventProcessingAware, RGBModelContra
      * @result model链接
      */
     public String trade() {
-        return "http://ec2-3-68-222-109.eu-central-1.compute.amazonaws.com:5000";
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

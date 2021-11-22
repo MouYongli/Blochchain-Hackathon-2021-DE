@@ -67,7 +67,7 @@
                         </gateway>
 
                         <!-- 账本，不填默认选择列表第一个 -->
-                        <ledger>j5q71j9jLtoqD4G9EE4hPEcrmxe7gc5LFVrQG58PaE9k6X</ledger>
+                        <ledger>j5io4MUXzNvpiNDWY3nrMHKw1C9rVhzs1qctNCZ6KNZYki</ledger>
 
                         <!-- 更新已存在合约代码 -->
                         <!--                        <contractAddress>-->
@@ -76,8 +76,8 @@
 
                         <!-- 用户信息，必选项，任何一个合约发布都需要拥有者进行签名 -->
                         <signer>
-                            <pubKey>7VeR7J4aFAqoxni7EtkME6LUfPHZJ99bG5UUaGUmovZ2gG18</pubKey>
-                            <privKey>177gk14VFVrqUXHsYjuuDg4xdwSMgRCXfakWzEmJxYruCFA4kT6Teu5zRAmoGV48NtPKm12</privKey>
+                            <pubKey>7VeRP26BZKjX6GCUSS546ZjhbHQg8SanYWfZjEVfmzjzpG4i</pubKey>
+                            <privKey>177gjyjqsXwtRmM7ZbJYBDBDrmUDKnPBsfUFxmqWUPZv9aizBrwExXUfADVM6RqWrK1CGSJ</privKey>
                             <privKeyPwd>8EjkXVSTxMFjCvNNsTo8RBMDEVQmk7gYkW4SCDuvdsBG</privKeyPwd>
                         </signer>
                     </deployment>

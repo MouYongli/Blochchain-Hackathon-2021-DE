@@ -1,7 +1,6 @@
 package com.block.chain.jd.contract;
 
 import com.jd.blockchain.contract.ContractEventContext;
-import com.jd.blockchain.contract.EventProcessingAware;
 import com.jd.blockchain.crypto.AsymmetricKeypair;
 import com.jd.blockchain.crypto.Crypto;
 import com.jd.blockchain.crypto.CryptoAlgorithm;
@@ -9,8 +8,9 @@ import com.jd.blockchain.crypto.SignatureFunction;
 import com.jd.blockchain.ledger.BlockchainKeypair;
 import com.jd.blockchain.ledger.Event;
 import com.jd.blockchain.ledger.TypedKVEntry;
+import java.util.UUID;
+import utils.Bytes;
 
-        import utils.Bytes;
 
 public class MTModelContractImp implements EventProcessingAware, MTModelContract {
 
@@ -124,7 +124,8 @@ public class MTModelContractImp implements EventProcessingAware, MTModelContract
      *
      * @result model链接
      */
+    @Override
     public String trade() {
-        return "https://docker.io/mt/model/constract";
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }
