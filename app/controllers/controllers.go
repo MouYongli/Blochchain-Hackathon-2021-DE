@@ -17,6 +17,10 @@ type Controllers struct {}
 
 var contractAddress = [...]string {
 	"LdeNvYsTHZuoLYadGcrKqn96fy8zfo1YQKEJf",
+	"LdeNwqCNuThz5wCgFiyHR8xt5azfvJzc6rxgA",
+	"LdeNnmcCrBDy8djM7j7CPX57sNpbeiTQJdCqZ",
+	"LdeNsHBsCXSt2fyqnbZaS4oNr2mwqYn4iPRUo",
+	"LdeNmtM1gLwkvfTNK55XcYKkT7hUp38wMW2Tv",
 }
 
 func (controllers *Controllers) GetModel(ctx iris.Context) {
