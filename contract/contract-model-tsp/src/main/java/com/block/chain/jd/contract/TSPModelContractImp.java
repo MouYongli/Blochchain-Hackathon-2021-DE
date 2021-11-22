@@ -1,7 +1,6 @@
 package com.block.chain.jd.contract;
 
 import com.jd.blockchain.contract.ContractEventContext;
-import com.jd.blockchain.contract.EventProcessingAware;
 import com.jd.blockchain.crypto.AsymmetricKeypair;
 import com.jd.blockchain.crypto.Crypto;
 import com.jd.blockchain.crypto.CryptoAlgorithm;
@@ -9,7 +8,6 @@ import com.jd.blockchain.crypto.SignatureFunction;
 import com.jd.blockchain.ledger.BlockchainKeypair;
 import com.jd.blockchain.ledger.Event;
 import com.jd.blockchain.ledger.TypedKVEntry;
-import java.util.UUID;
 import utils.Bytes;
 
 
@@ -127,7 +125,7 @@ public class TSPModelContractImp implements EventProcessingAware, TSPModelContra
      */
     @Override
     public String trade() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return "kdjioewqhro2i3u8947u2983742hj4984789213hj12983";
     }
 }
 

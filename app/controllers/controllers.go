@@ -164,7 +164,7 @@ func (controllers *Controllers) Trade(ctx iris.Context) {
 	}
 
 	ret := make(map[string]string)
-	ret["url"] = string(response.OperationResults[0].Result.Bytes)
+	ret["token"] = string(response.OperationResults[0].Result.Bytes)
 	ctx.JSON(ret)
 }
 

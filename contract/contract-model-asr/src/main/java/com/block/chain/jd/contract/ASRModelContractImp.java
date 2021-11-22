@@ -9,9 +9,8 @@ import com.jd.blockchain.crypto.SignatureFunction;
 import com.jd.blockchain.ledger.BlockchainKeypair;
 import com.jd.blockchain.ledger.Event;
 import com.jd.blockchain.ledger.TypedKVEntry;
-import java.util.UUID;
-import utils.Bytes;
 
+import utils.Bytes;
 
 
 public class ASRModelContractImp implements EventProcessingAware, ASRModelContract {
@@ -128,6 +127,6 @@ public class ASRModelContractImp implements EventProcessingAware, ASRModelContra
      */
     @Override
     public String trade() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return "kehgojjo234ijtjg3w4iout43ujr9834";
     }
 }

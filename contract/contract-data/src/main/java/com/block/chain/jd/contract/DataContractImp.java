@@ -12,8 +12,6 @@ import com.jd.blockchain.ledger.TypedKVEntry;
 
 import utils.Bytes;
 
-import java.util.UUID;
-
 public class DataContractImp implements EventProcessingAware, DataContract {
 
     private ContractEventContext eventContext;
@@ -127,6 +125,6 @@ public class DataContractImp implements EventProcessingAware, DataContract {
      * @result model链接
      */
     public String trade() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return "dfenjogjre32344tljjroghfjej";
     }
 }

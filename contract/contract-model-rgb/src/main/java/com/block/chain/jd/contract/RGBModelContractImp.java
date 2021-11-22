@@ -12,8 +12,6 @@ import com.jd.blockchain.ledger.TypedKVEntry;
 
 import utils.Bytes;
 
-import java.util.UUID;
-
 public class RGBModelContractImp implements EventProcessingAware, RGBModelContract {
 
     private ContractEventContext eventContext;
@@ -127,6 +125,6 @@ public class RGBModelContractImp implements EventProcessingAware, RGBModelContra
      * @result model链接
      */
     public String trade() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return "jiewneiuty23984jr43u5r39847y59thj5toi24j3i";
     }
 }
