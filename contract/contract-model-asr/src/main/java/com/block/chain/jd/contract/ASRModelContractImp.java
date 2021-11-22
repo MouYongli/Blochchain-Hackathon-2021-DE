@@ -1,6 +1,7 @@
 package com.block.chain.jd.contract;
 
 import com.jd.blockchain.contract.ContractEventContext;
+import com.jd.blockchain.contract.EventProcessingAware;
 import com.jd.blockchain.crypto.AsymmetricKeypair;
 import com.jd.blockchain.crypto.Crypto;
 import com.jd.blockchain.crypto.CryptoAlgorithm;

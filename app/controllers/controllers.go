@@ -16,11 +16,7 @@ import (
 type Controllers struct {}
 
 var contractAddress = [...]string {
-	"LdeNvMxTEmYbRtWeiPB8nw4TFccdqyqsAsiAE",
-	"LdeNzbwk9Hn5aJUDVCAZew7o5Cg5Q9xzKhtE5",
-	"LdeNtetGdHSyRgw4wDWX4Q8Mpe9kRZKznb65v",
-	"LdeNfcDNKHNHKbwBfM5h2yx9n8STcF4bHG8uB",
-	"LdeNxK5anSpxgAfpXbDCfM6Mx1EXgPs6sfKnp",
+	"LdeNvYsTHZuoLYadGcrKqn96fy8zfo1YQKEJf",
 }
 
 func (controllers *Controllers) GetModel(ctx iris.Context) {
@@ -94,7 +90,7 @@ func (controllers *Controllers) GetData(ctx iris.Context) {
 	data := make(map[string]string)
 	modelName := bs.NewTransaction(ledgers[0])
 	nameSender := modelName.ContractEvents()
-	err = nameSender.Send(base58.MustDecode("LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D"), 1, "getDataName")
+	err = nameSender.Send(base58.MustDecode("LdeNuQ8etNT1gjAynzp7cbG4w6QSgpvbXDb3u"), 1, "getDataName")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -113,7 +109,7 @@ func (controllers *Controllers) GetData(ctx iris.Context) {
 
 	modelInfo := bs.NewTransaction(ledgers[0])
 	infoSender := modelInfo.ContractEvents()
-	err = infoSender.Send(base58.MustDecode("LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D"), 1, "getDataInfo")
+	err = infoSender.Send(base58.MustDecode("LdeNuQ8etNT1gjAynzp7cbG4w6QSgpvbXDb3u"), 1, "getDataInfo")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -129,7 +125,7 @@ func (controllers *Controllers) GetData(ctx iris.Context) {
 	}
 
 	data["info"] = string(response.OperationResults[0].Result.Bytes)
-	data["addr"] = "LdeNuhTDvAAynX9WVob7rci7ratnpcfZ5VV6D"
+	data["addr"] = "LdeNuQ8etNT1gjAynzp7cbG4w6QSgpvbXDb3u"
 
 	ret := make([]map[string]string, 1)
 	ret[0] = data
