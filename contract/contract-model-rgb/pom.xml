@@ -67,7 +67,7 @@
                         </gateway>
 
                         <!-- 账本，不填默认选择列表第一个 -->
-                        <ledger>j5q71j9jLtoqD4G9EE4hPEcrmxe7gc5LFVrQG58PaE9k6X</ledger>
+                        <ledger>j5io4MUXzNvpiNDWY3nrMHKw1C9rVhzs1qctNCZ6KNZYki</ledger>
 
                         <!-- 更新已存在合约代码 -->
                         <!--                        <contractAddress>-->

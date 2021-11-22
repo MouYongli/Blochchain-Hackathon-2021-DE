@@ -6,7 +6,7 @@ import (
 )
 
 func RegisterRoute(app *iris.Application) error {
-	//app.HandleDir("/", "views")
+	app.HandleDir("/", "uploads")
 	//app.HandleDir("/static", "views/static")
 	//app.RegisterView(iris.HTML("views", ".html"))
 

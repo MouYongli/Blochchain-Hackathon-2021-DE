@@ -6,7 +6,7 @@ services:
     ports:
       - "8090:8090"
     volumes:
-      - ./uploads:/backend/uploads:rw
+      - ./app/uploads:/backend/uploads:rw
     restart: always
     networks:
       net-bc:
@@ -18,27 +18,11 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./uploads:/model/uploads:rw
+      - ./app/uploads:/model/uploads:rw
     restart: always
     networks:
       net-bc:
         ipv4_address: 10.172.17.3
-
-  nginx:
-    image: nginx:stable
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./uploads:/usr/share/nginx/downloads:ro
-    depends_on:
-      - backend
-      - onnx
-    restart: always
-    networks:
-      net-bc:
-        ipv4_address: 10.172.17.4
 
 networks:
   net-bc:

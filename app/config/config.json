@@ -2,9 +2,9 @@
   "Server": {
     "host": "0.0.0.0",
     "port": 8090,
-    "model": "http://35.156.235.163/onnx",
+    "model": "http://35.156.235.163:5000/",
     "uploads": "/backend/uploads/",
-    "downloads": "http://35.156.235.163/downloads/"
+    "downloads": "http://35.156.235.163:8090/uploads/"
   },
   "Chain": {
     "gateway": "35.156.235.163",
